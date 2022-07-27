@@ -24,5 +24,5 @@ A Johnson counter is a modified ring counter in which the output from the last f
  
                                   gtkwave iiitb_jc.vcd
                                   
- ![IMG_20220727_204241](https://user-images.githubusercontent.com/110079634/181283929-e797eeef-bc24-4af1-ba89-659a6aa7a0e4.jpg)
+ 
 
