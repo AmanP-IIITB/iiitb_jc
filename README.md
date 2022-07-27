@@ -7,14 +7,14 @@ A Johnson counter is a modified ring counter in which the output from the last f
 
 # Steps to use the Design:
 
-1. Use the following code to download repository in LINUX OS commandline terminal:       
+1. Use the following code to download repository in LINUX OS commandline terminal:   /n    
                                  git clone https://github.com/AmanP-IIITB/iiitb_jc
  
-2. Go to the approriate directory and write this command to compile the verilog files and generate the .out file:
+2. Go to the approriate directory and write this command to compile the verilog files and generate the .out file:/n
                                  iverilog -o jc.out iiitb_jc.v iiitb_jc_tb.v
    
-3. Use this code to run the .out file:
+3. Use this code to run the .out file: /n
                                  ./jc.out
    
-4. To see the output waveforms, use the following code:
+4. To see the output waveforms, use the following code:/n
                                   gtkwave iiitb_jc.vcd
