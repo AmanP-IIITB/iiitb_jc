@@ -1,4 +1,4 @@
-module johnson(Resetn, Clock, Q);
+module iiitb_jc(Resetn, Clock, Q);
 input Resetn, Clock;
 output[7:0] Q;
 reg [7:0] Q;
