@@ -17,9 +17,9 @@ A Johnson counter is a modified ring counter in which the output from the last f
    
 3. Use this code to run the .out file: 
  
-  ./jc.out
+                                  ./jc.out
    
  
 4. To see the output waveforms, use the following code:
  
-   gtkwave iiitb_jc.vcd
+                                  gtkwave iiitb_jc.vcd
