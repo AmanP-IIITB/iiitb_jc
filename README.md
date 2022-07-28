@@ -25,6 +25,20 @@ A Johnson counter is a modified ring counter in which the output from the last f
                                   
  ![IMG_20220727_204520](https://user-images.githubusercontent.com/110079634/181284611-aebcad3c-e342-41cd-b69b-4fe2989d42b1.jpg)
  ![IMG_20220727_233411](https://user-images.githubusercontent.com/110079634/181341966-564b0f18-296e-4225-a9ba-aeecbfa03d4d.jpg)
+# Contributors
+  ~ Aman Prajapati
+  ~ Kunal Ghosh
+  
+ 
+# Acknowledgements
+  ~ Kunal Ghosh,Director and Co-Founder at VLSI System Design Pvt. Ltd.
 
+
+# Contact Information
+  ~ Aman Prajapati, Postgraduate student, International Institute of Information Technology, Bangalore
+     Aman.Prajapati@iiitb.ac.in
+     
+  ~ Kunal Ghosh,Director and Co-Founder at VLSI System Design Pvt. Ltd.
+     kunalghosh@gmail.com
 
 
