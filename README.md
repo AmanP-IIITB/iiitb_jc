@@ -6,6 +6,7 @@ A Johnson counter is a modified ring counter in which the output from the last f
 
 # Applications of Johnson Counter:
   ~ Used as a synchronous decade counter or divider circuit.
+  
   ~ 3 stage Johnson counter is used as a 3 phase square wave generator with 1200 phase shift.
 
 # Steps to use the Design:
