@@ -27,6 +27,7 @@ A Johnson counter is a modified ring counter in which the output from the last f
  ![IMG_20220727_233411](https://user-images.githubusercontent.com/110079634/181341966-564b0f18-296e-4225-a9ba-aeecbfa03d4d.jpg)
 # Contributors
   ~ Aman Prajapati
+  
   ~ Kunal Ghosh
   
  
