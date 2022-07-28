@@ -4,6 +4,10 @@ A Johnson counter is a modified ring counter in which the output from the last f
 ![8_bit_ring_counter_thumb 4](https://user-images.githubusercontent.com/110079634/181281038-1708f9c6-5df8-4081-8218-e5faf6324e43.gif)
 ![cmQ2g](https://user-images.githubusercontent.com/110079634/181285376-8db49220-f999-414a-baef-bca3db1a0470.png)
 
+# Applications of Johnson Counter:
+  ~ Used as a synchronous decade counter or divider circuit.
+  ~ 3 stage Johnson counter is used as a 3 phase square wave generator with 1200 phase shift.
+
 # Steps to use the Design:
 
 1. Use the following code to download repository in LINUX OS commandline terminal:   
