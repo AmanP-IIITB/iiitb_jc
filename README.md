@@ -6,7 +6,7 @@
  - [3.APPLICATIONS OF JOHNSON'S COUNTER](#3-APPLICATIONS-OF-JOHNSON'S-COUNTER)
  - [4.FUNCTIONAL SIMULATION](#4-FUNCTIONAL-SIMULATION)
     - [4.1 About iverilog and gtkwave](#41-About-iverilog-and-gtkwave)
-    - [4.2 Installing iverilog and gtkwave](#42-Installing-iverilog-and-gtkwave)
+    - [4.2 Installing iverilog and gtkwavein Ubuntu](#42-Installing-iverilog-and-gtkwave-in-Ubuntu)
     - [4.3 The output waveform](#43-The-output-waveform)
  - [5.SYNTHESIS](#5-SYNTHESIS)
     - [5.1 Synthesis](#51-Synthesis)
@@ -38,9 +38,8 @@ A Johnson counter is a modified ring counter in which the output from the last f
 - Icarus Verilog is an implementation of the Verilog hardware description language.
 - GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
-### 4.2 Installing iverilog and gtkwave
+### 4.2 Installing iverilog and gtkwave in Ubuntu
 
-- **For Ubuntu**
 
  Open your terminal and type the following to install iverilog and GTKWave
  ```
