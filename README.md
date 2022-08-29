@@ -16,7 +16,7 @@
     - [7.1 Openlane](#71-Openlane)
     - [7.2 Installation Instructions](#72-Installation-Instructions)
     - [7.3 Magic](#73-Magic)
-    - [7.4 Generating Layout](#74-Generating-Layout)
+    - [7.4 Invoking OpenLANE and Design Preparation](#74-Invoking-OpenLANE-and-Design-Preparation)
 
 ## 1. JOHNSON'S COUNTER
 
@@ -172,3 +172,21 @@ $   sudo make
 $   sudo make install
 ```
 type **magic** terminal to check whether it installed succesfully or not. type **exit** to exit magic.
+
+### 7.2 Invoking OpenLANE and Design Preparation
+Openlane can be invoked using docker command followed by opening an interactive session. flow.tcl is a script that specifies details for openLANE flow.
+```
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+```
+```
+prep -design picorv32a
+```
+![S1](https://user-images.githubusercontent.com/110079634/187185793-a4d6f783-3379-4ff3-bfcb-11feee6b3913.png)
+
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+![S2](https://user-images.githubusercontent.com/110079634/187187196-6c442b0f-6d93-4595-8803-316fbe2e263a.png)
