@@ -20,6 +20,8 @@
     - [7.5 Synthesis](#73-Synthesis)
     - [7.6 Floor Planning](#76-Floorplanning)
     - [7.7 Placement](#77-Placement)
+    - [7.8 Clock Tree Synthesis (CTS)](#78-Clock-Tree-Synthesis-(CTS))
+    - [7.9 Routing](#79-Routing)
 
 ## 1. JOHNSON'S COUNTER
 
@@ -252,3 +254,34 @@ Placement results:
 
 ![S6](https://user-images.githubusercontent.com/110079634/187200927-0770ef11-198d-4340-9495-766c809f7306.png)
 
+### 7.8 Clock Tree Synthesis (CTS):
+The purpose of building a clock tree is enable the clock input to reach every element and to ensure a zero clock skew. H-tree is a common methodology followed in CTS. Before attempting a CTS run in TritonCTS tool, if the slack was attempted to be reduced in previous run, the netlist may have gotten modified by cell replacement techniques. Therefore, the verilog file needs to be modified using the write_verilog command. Then, the synthesis, floorplan and placement is run again. To run CTS use the below command:
+
+```
+run_cts
+```
+![run_cts](https://user-images.githubusercontent.com/110079634/187264141-0cc213c1-8525-468c-a3e8-d2ccb6ca09b3.png)
+
+The timing results after the CTS is as shwon:
+![cts_results](https://user-images.githubusercontent.com/110079634/187262626-ea8ce81c-c304-41e5-a130-c906e8770892.png)
+
+### 7.9 Routing:
+
+The overall routing job is executed in three steps which are
+
+- **Global Routing** – In this stage, the whole design is first partitioned in small routing region into tiles/rectangles. Also, region to region paths are decided in a way to optimize the wire lengths and timing. This stage is actually the planning stage and no actual routing is done.</br>
+    
+- **Track Assignment** – In this stage, the routing tracks assigned by the global stage are replaced by the metal layers. Tracks are assigned in horizontal and vertical direction. If overlapping is occurred then rerouting is done.</br>
+    
+- **Detailed Routing** – Even if the metal layers are laid, the path may exists which can violate the setup and hold criteria In this stage, the critical paths are searched and fixed in many iterations until fixed.</br>
+
+Write the command to run routing:
+```
+run_routing
+```
+![run_routing](https://user-images.githubusercontent.com/110079634/187264145-3c18ef8a-9c45-434c-a614-65d6b2172afa.png)
+
+The results after the routing are:
+
+![routing_resultsjc](https://user-images.githubusercontent.com/110079634/187263803-b1ceb7bb-83f0-4fb0-83b1-59f5ba52974d.png)
+![routing_resultsjc2](https://user-images.githubusercontent.com/110079634/187263809-aa8afeda-9d3c-4acd-b930-6426cd4f0c91.png)
