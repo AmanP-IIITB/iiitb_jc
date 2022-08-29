@@ -65,7 +65,8 @@ $ ./iiitb_rv32i
 
 ### 4.3 The output waveform
 
-![IMG_20220727_233411](https://user-images.githubusercontent.com/110079634/181341966-564b0f18-296e-4225-a9ba-aeecbfa03d4d.jpg)
+![first_waveform](https://user-images.githubusercontent.com/110079634/187205028-b9a54e1e-c965-49a9-80e2-9af40e598f35.png)
+
 
 ## 5. SYNTHESIS
 
@@ -173,7 +174,7 @@ $   sudo make install
 ```
 type **magic** terminal to check whether it installed succesfully or not. type **exit** to exit magic.
 
-### 7.2 Invoking OpenLANE and Design Preparation
+### 7.4 Invoking OpenLANE and Design Preparation
 Openlane can be invoked using docker command followed by opening an interactive session. flow.tcl is a script that specifies details for openLANE flow.
 ```
 docker
@@ -190,3 +191,31 @@ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
 ![S2](https://user-images.githubusercontent.com/110079634/187187196-6c442b0f-6d93-4595-8803-316fbe2e263a.png)
+
+### 7.5 Floorplanning
+Floor plan determines the size of the design cell (or die), creates the boundary and core area, and creates wire tracks for placement of standard cells. It is also a process of positioning blocks or macros on the die.
+
+To run the iiitb_jc floorplan in openLANE:
+```
+run_floorplan
+```
+![S3](https://user-images.githubusercontent.com/110079634/187198913-1d47bef2-4c8a-473f-a417-02f18c016d4d.png)
+
+Post the floorplan run, a .def file will have been created within the results/floorplan directory. We may review floorplan files by checking the floorplan.tcl. The system defaults will have been overriden by switches set in conifg.tcl and further overriden by switches set in sky130A_sky130_fd_sc_hd_config.tcl.
+
+To view the floorplan, Magic is invoked after moving to the results/floorplan directory:
+```
+magic -T /home/aman/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef read iiitb_jc.def
+```
+
+![S4](https://user-images.githubusercontent.com/110079634/187200344-8664b8c3-9b94-4139-975a-58a8c2998fa6.png)
+
+*One can zoom into Magic layout by selecting an area with left and right mouse click followed by pressing "z" key.
+*Various components can be identified by using the what command in tkcon window after making a selection on the component.
+*Zooming in also provides a view of decaps present in picorv32a chip.
+*The standard cell can be found at the bottom left corner.
+
+![S5](https://user-images.githubusercontent.com/110079634/187200922-53f5be93-722e-4731-85c9-c168cd4e9952.png)
+
+![S6](https://user-images.githubusercontent.com/110079634/187200927-0770ef11-198d-4340-9495-766c809f7306.png)
+
