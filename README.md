@@ -17,8 +17,9 @@
     - [7.2 Installation Instructions](#72-Installation-Instructions)
     - [7.3 Magic](#73-Magic)
     - [7.4 Invoking OpenLANE and Design Preparation](#74-Invoking-OpenLANE-and-Design-Preparation)
-    - [7.5 Floor Planning](#75-Floorplanning)
-    - [7.6 Placement](#76-Placement)
+    - [7.5 Synthesis](#73-Synthesis)
+    - [7.6 Floor Planning](#76-Floorplanning)
+    - [7.7 Placement](#77-Placement)
 
 ## 1. JOHNSON'S COUNTER
 
@@ -193,7 +194,16 @@ add_lefs -src $lefs
 ```
 ![S2](https://user-images.githubusercontent.com/110079634/187187196-6c442b0f-6d93-4595-8803-316fbe2e263a.png)
 
-### 7.5 Floorplanning:
+### 7.5 Synthesis:
+
+Synthesis is the process of creating a gate level description of the blocks that are described behaviorally in verilog and prepairing the complete design for the place and route process.
+
+Write the command for synthesis:
+```run_synthesis
+```
+![S10](https://user-images.githubusercontent.com/110079634/187246776-7741090d-8391-4463-a0fb-7f6f4498bd0a.png)
+
+### 7.6 Floorplanning:
 Floor plan determines the size of the design cell (or die), creates the boundary and core area, and creates wire tracks for placement of standard cells. It is also a process of positioning blocks or macros on the die.
 
 To run the iiitb_jc floorplan in openLANE:
@@ -214,7 +224,7 @@ magic -T /home/aman/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef 
 - Zooming in also provides a view of decaps present in johnson's counter chip.</br>
 - The standard cell can be found at the bottom left corner.</br>
 
-### 7.6 Placement:
+### 7.7 Placement:
 Placement can be done in four phases:
 
 I. Pre-placement optimization: In this process optimization happens before netlist is placed. In this process high-fan out nets are collapsed downsizing the cells.</br>
