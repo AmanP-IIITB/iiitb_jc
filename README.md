@@ -209,7 +209,7 @@ magic -T /home/aman/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef 
 
 - One can zoom into Magic layout by selecting an area with left and right mouse click followed by pressing "z" key.</br>
 - Various components can be identified by using the what command in tkcon window after making a selection on the component.</br>
-- Zooming in also provides a view of decaps present in picorv32a chip.</br>
+- Zooming in also provides a view of decaps present in johnson's counter chip.</br>
 - The standard cell can be found at the bottom left corner.</br>
 
 ### 7.6 Placement:
