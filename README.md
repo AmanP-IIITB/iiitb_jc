@@ -57,7 +57,7 @@ A Johnson counter is a modified ring counter in which the output from the last f
 
 ```
 $ iverilog -o iiitb_jc iiitb_jc.v iiitb_jc_tb.v
-$ ./iiitb_rv32i
+$ ./iiitb_jc
 ```
 - **To see the output waveform in gtkwave, enter the following commands in your terminal.**
 
@@ -93,7 +93,7 @@ The contents of the yosys_run file are given below:
 
 ```
 read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog iiitb_rv32i.v
+read_verilog iiitb_jc.v
 synth -top iiitb_rv32i	
 dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -118,14 +118,14 @@ gtkwave iiitb_jc.vcd
 ```
 The gtkwave output for the netlist should match the output waveform for the RTL design file. As netlist and design code have same set of inputs and outputs, we can use the same testbench and compare the waveforms.
 
-The output waveform of the synthesized netlist given below:
+The output waveform of the synthesized netlist are given below:
 <img width="1130" alt="synth_waveform" src="![synth_waveform](https://user-images.githubusercontent.com/110079634/187184170-cedf1607-e540-4322-a87a-8c53ffcf81a4.png)">
 
 ## 7. PHYSICAL DESIGN 
 ### 7.1 Openlane
 OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
 
-more at https://github.com/The-OpenROAD-Project/OpenLane
+Find more details for OpenLane at https://github.com/The-OpenROAD-Project/OpenLane
 ### 7.2 Installation instructions 
 ```
 $   apt install -y build-essential python3 python3-venv python3-pip
@@ -147,7 +147,7 @@ It takes approximate time of 5min to complete. After 43 steps, if it ended with 
 ### 7.3 Magic
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
-More about magic at http://opencircuitdesign.com/magic/index.html
+Find more details of magic at http://opencircuitdesign.com/magic/index.html
 
 Run following commands one by one to fulfill the system requirement.
 
@@ -181,7 +181,7 @@ docker
 package require openlane 0.9
 ```
 ```
-prep -design picorv32a
+prep -design iiitb_jc
 ```
 ![S1](https://user-images.githubusercontent.com/110079634/187185793-a4d6f783-3379-4ff3-bfcb-11feee6b3913.png)
 
@@ -230,7 +230,7 @@ run_placement
 ![S7](https://user-images.githubusercontent.com/110079634/187209128-6672ea88-8f11-460b-b715-0d6fcc7d51e0.png)
 The objective of placement is the convergence of overflow value. If overflow value progressively reduces during the placement run it implies that the design will converge and placement will be successful. Post placement, the design can be viewed on magic within results/placement directory:
 ```
-magic -T /home/devipriya/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef def read picorv32a.def &
+ magic -T /home/aman/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef read iiitb_jc.def
 ```
 
 Placement results:
