@@ -17,6 +17,7 @@
     - [7.2 Installation Instructions](#72-Installation-Instructions)
     - [7.3 Magic](#73-Magic)
     - [7.4 Invoking OpenLANE and Design Preparation](#74-Invoking-OpenLANE-and-Design-Preparation)
+    - [7.3 Floor Planning](#73-Floorplanning)
 
 ## 1. JOHNSON'S COUNTER
 
@@ -192,7 +193,7 @@ add_lefs -src $lefs
 ```
 ![S2](https://user-images.githubusercontent.com/110079634/187187196-6c442b0f-6d93-4595-8803-316fbe2e263a.png)
 
-### 7.5 Floorplanning
+### 7.5 Floorplanning:
 Floor plan determines the size of the design cell (or die), creates the boundary and core area, and creates wire tracks for placement of standard cells. It is also a process of positioning blocks or macros on the die.
 
 To run the iiitb_jc floorplan in openLANE:
