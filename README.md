@@ -17,7 +17,8 @@
     - [7.2 Installation Instructions](#72-Installation-Instructions)
     - [7.3 Magic](#73-Magic)
     - [7.4 Invoking OpenLANE and Design Preparation](#74-Invoking-OpenLANE-and-Design-Preparation)
-    - [7.3 Floor Planning](#73-Floorplanning)
+    - [7.5 Floor Planning](#75-Floorplanning)
+    - [7.6 Placement](#76-Placement)
 
 ## 1. JOHNSON'S COUNTER
 
@@ -27,9 +28,8 @@ A Johnson counter is a modified ring counter in which the output from the last f
 ![8_bit_ring_counter_thumb 4](https://user-images.githubusercontent.com/110079634/181281038-1708f9c6-5df8-4081-8218-e5faf6324e43.gif)
 
 ## 3. APPLICATIONS OF JOHNSON'S COUNTER
-~ Used as a synchronous decade counter or divider circuit.
-  
-~ 3 stage Johnson counter is used as a 3 phase square wave generator with 1200 phase shift.
+- Used as a synchronous decade counter or divider circuit.
+- 3 stage Johnson counter is used as a 3 phase square wave generator with 1200 phase shift.
 
 
 ## 4. FUNCTIONAL SIMULATION
@@ -208,12 +208,34 @@ To view the floorplan, Magic is invoked after moving to the results/floorplan di
 magic -T /home/aman/ASIC/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef read iiitb_jc.def
 ```
 
-![S4](https://user-images.githubusercontent.com/110079634/187200344-8664b8c3-9b94-4139-975a-58a8c2998fa6.png)
+- One can zoom into Magic layout by selecting an area with left and right mouse click followed by pressing "z" key.</br>
+- Various components can be identified by using the what command in tkcon window after making a selection on the component.</br>
+- Zooming in also provides a view of decaps present in picorv32a chip.</br>
+- The standard cell can be found at the bottom left corner.</br>
 
-*One can zoom into Magic layout by selecting an area with left and right mouse click followed by pressing "z" key.
-*Various components can be identified by using the what command in tkcon window after making a selection on the component.
-*Zooming in also provides a view of decaps present in picorv32a chip.
-*The standard cell can be found at the bottom left corner.
+### 7.6 Placement:
+Placement can be done in four phases:
+
+I. Pre-placement optimization: In this process optimization happens before netlist is placed. In this process high-fan out nets are collapsed downsizing the cells.</br>
+
+II. In placement optimization: In this process logic is re-optimized according to the VR. Cell bypassing, cell moving, gate duplication, buffer insertion, etc. can be performed in this step.</br>
+
+III. Post Placement optimization: Netlist is optimized with ideal clocks before CTS. It can fix setup, hold violations. Optimization is done based on global routing.</br>
+
+IV. Post placement optimization after CTS optimization: Optimization is performed after the CTS optimization is done using propagated clock. It tries to preserve the clock skew.</br>
+
+Command to run placement process:
+```
+run_placement
+```
+![S7](https://user-images.githubusercontent.com/110079634/187209128-6672ea88-8f11-460b-b715-0d6fcc7d51e0.png)
+The objective of placement is the convergence of overflow value. If overflow value progressively reduces during the placement run it implies that the design will converge and placement will be successful. Post placement, the design can be viewed on magic within results/placement directory:
+```
+magic -T /home/devipriya/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef def read picorv32a.def &
+```
+
+Placement results:
+![S4](https://user-images.githubusercontent.com/110079634/187200344-8664b8c3-9b94-4139-975a-58a8c2998fa6.png)
 
 ![S5](https://user-images.githubusercontent.com/110079634/187200922-53f5be93-722e-4731-85c9-c168cd4e9952.png)
 
