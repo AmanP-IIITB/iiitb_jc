@@ -255,6 +255,10 @@ Placement results:
 
 ![S6](https://user-images.githubusercontent.com/110079634/187200927-0770ef11-198d-4340-9495-766c809f7306.png)
 
+Located the explicitly added vsdinv inverter:
+![vsdinv](https://user-images.githubusercontent.com/110079634/187420803-c9d72d02-ca09-4485-97e5-bb491c7beda3.PNG)
+
+
 ### 7.8 Clock Tree Synthesis (CTS):
 The purpose of building a clock tree is enable the clock input to reach every element and to ensure a zero clock skew. H-tree is a common methodology followed in CTS. Before attempting a CTS run in TritonCTS tool, if the slack was attempted to be reduced in previous run, the netlist may have gotten modified by cell replacement techniques. Therefore, the verilog file needs to be modified using the write_verilog command. Then, the synthesis, floorplan and placement is run again. To run CTS use the below command:
 
