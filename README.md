@@ -206,6 +206,14 @@ Write the command for synthesis:
 ```
 ![S10](https://user-images.githubusercontent.com/110079634/187246776-7741090d-8391-4463-a0fb-7f6f4498bd0a.png)
 
+After the synthesis the updated cells and flipflop count is given as (stat):
+
+![Q1](https://user-images.githubusercontent.com/110079634/192446937-718b742d-5992-487b-b452-9c7525bc3466.png)
+
+```
+Flip Flop to standard cell ratio = (Number of flip-flops)/(Number of cells) = 8/116 = 0.0689
+```
+
 ### 7.6 Floorplanning:
 Floor plan determines the size of the design cell (or die), creates the boundary and core area, and creates wire tracks for placement of standard cells. It is also a process of positioning blocks or macros on the die.
 
@@ -290,3 +298,12 @@ The results after the routing are:
 
 ![routing_resultsjc](https://user-images.githubusercontent.com/110079634/187263803-b1ceb7bb-83f0-4fb0-83b1-59f5ba52974d.png)
 ![routing_resultsjc2](https://user-images.githubusercontent.com/110079634/187263809-aa8afeda-9d3c-4acd-b930-6426cd4f0c91.png)
+
+The area of the desgin can be found using the "box" command in the magic window:
+
+![Q2](https://user-images.githubusercontent.com/110079634/192448312-ecde53ee-181e-4036-96e6-7e15fb5e8a01.png)
+
+The power consumption in all aspect of the design is given as:
+
+
+![Q5](https://user-images.githubusercontent.com/110079634/192449648-49789df0-4a88-4180-9b33-b08639fd2674.png)
