@@ -305,5 +305,10 @@ The area of the desgin can be found using the "box" command in the magic window:
 
 The power consumption in all aspect of the design is given as:
 
+![Q5](https://user-images.githubusercontent.com/110079634/192693367-a21b0b7f-a00e-4b69-9ea3-2e736da33a53.png)
 
-![Q5](https://user-images.githubusercontent.com/110079634/192449648-49789df0-4a88-4180-9b33-b08639fd2674.png)
+The performance of the desgin can be estimated from the below image:
+
+![Q3](https://user-images.githubusercontent.com/110079634/192693547-ae0ffba9-1ddf-4599-913d-f427722da7d9.png)
+
+The minimum slack is found between the flip-flops 3 and 4 ie 64.04. Therefore, frequency in GHz = 1/ (Clock period - min slack) = 1.041 GHz
